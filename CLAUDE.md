@@ -176,3 +176,50 @@ claude mcp add github-mcp-server \
 - File operations on GitHub repos
 
 **Note:** The GitHub MCP server requires GitHub API authentication. You'll need to provide a GitHub personal access token during configuration.
+
+### 3. HT MCP Server
+Provides terminal session management and command execution capabilities.
+
+**Features:**
+- Create and manage terminal sessions
+- Execute commands with output capture
+- Take terminal snapshots
+- Session control and monitoring
+
+### 4. Browser MCP Server
+Enables web browser automation and interaction capabilities.
+
+**Features:**
+- Navigate to URLs and control web pages
+- Take screenshots and page snapshots
+- Click elements and fill forms
+- Interact with web applications for testing
+- Extract page content and data
+
+### 5. Memory MCP Server
+Handles session memory management and context persistence.
+
+**Features:**
+- Maintain conversation context across sessions
+- Store and retrieve development notes
+- Persist important project information
+
+### 6. File System MCP Server
+Provides enhanced file operations beyond standard file tools.
+
+**Features:**
+- Advanced file search and pattern matching
+- Bulk file operations
+- Directory tree operations
+- File metadata access
+
+### 7. Web Fetch MCP Server
+Enables web content retrieval and processing.
+
+**Features:**
+- Fetch content from URLs
+- Process and analyze web pages
+- Extract specific information from websites
+- Handle various web content formats
+
+**Note:** These additional MCP servers are typically configured at the Claude Code level and provide enhanced capabilities for development, testing, and automation tasks.
