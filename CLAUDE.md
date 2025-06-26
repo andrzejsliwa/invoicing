@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a Rails 8.0.2 invoicing application using:
+
 - Ruby 3.4.2
 - PostgreSQL database
 - Hotwire (Turbo + Stimulus) for interactive features
@@ -15,17 +16,20 @@ This is a Rails 8.0.2 invoicing application using:
 ## Common Development Commands
 
 ### Initial Setup
+
 ```bash
 bin/setup              # Install dependencies, create DB, start server
 ```
 
 ### Development Server
+
 ```bash
 bin/dev                # Start Rails server + Tailwind CSS watcher
 bin/rails server       # Start only Rails server
 ```
 
 ### Database
+
 ```bash
 bin/rails db:create    # Create development and test databases
 bin/rails db:migrate   # Run migrations
@@ -35,6 +39,7 @@ bin/rails db:reset     # Drop, create, migrate, and seed
 ```
 
 ### Testing
+
 ```bash
 bin/rails test                # Run all tests
 bin/rails test test/models    # Run model tests
@@ -44,6 +49,7 @@ bin/rails test TEST=test/models/user_test.rb:10     # Run specific test line
 ```
 
 ### Code Quality
+
 ```bash
 bin/rubocop            # Run RuboCop linter
 bin/rubocop -a         # Auto-fix RuboCop violations
@@ -51,6 +57,7 @@ bin/brakeman           # Run security scanner
 ```
 
 ### Console & Tasks
+
 ```bash
 bin/rails console      # Rails console
 bin/rails routes       # Show all routes
@@ -59,6 +66,7 @@ bin/rails destroy      # Remove generated files
 ```
 
 ### Deployment
+
 ```bash
 bin/kamal setup        # Initial deployment setup
 bin/kamal deploy       # Deploy application
@@ -68,6 +76,7 @@ bin/kamal rollback     # Rollback to previous version
 ## Architecture Overview
 
 ### Application Structure
+
 - **MVC Pattern**: Standard Rails architecture with models, views, and controllers
 - **Asset Pipeline**: Uses Propshaft with Importmap for JavaScript and Tailwind for CSS
 - **Background Jobs**: Solid Queue (database-backed, no Redis needed)
@@ -75,6 +84,7 @@ bin/kamal rollback     # Rollback to previous version
 - **WebSockets**: Solid Cable (database-backed ActionCable)
 
 ### Key Directories
+
 - `app/models/`: ActiveRecord models for business logic
 - `app/controllers/`: Request handling and response
 - `app/views/`: ERB templates with Hotwire integration
@@ -84,19 +94,23 @@ bin/kamal rollback     # Rollback to previous version
 - `test/`: Minitest test files
 
 ### Database Architecture
+
 The application uses multiple PostgreSQL databases:
+
 - **Primary**: Main application data
 - **Cache**: Solid Cache storage
 - **Queue**: Solid Queue job storage
 - **Cable**: WebSocket connection storage
 
 ### Frontend Architecture
+
 - **Hotwire**: Server-side rendering with Turbo for SPA-like navigation
 - **Stimulus**: Modest JavaScript framework for interactivity
 - **Tailwind CSS**: Utility-first CSS framework
 - **Importmap**: Native ES modules without bundling
 
 ### Deployment Architecture
+
 - **Docker**: Multi-stage Dockerfile for production builds
 - **Kamal**: Zero-downtime deployments with health checks
 - **Thruster**: HTTP/2 proxy server wrapper
@@ -123,28 +137,33 @@ The application uses multiple PostgreSQL databases:
 This project uses MCP servers to enhance the development experience with Claude Code. The following MCP servers are required:
 
 ### Prerequisites
+
 Ensure you have Claude Code installed and configured:
+
 ```bash
 # Install Claude Code CLI
 npm install -g @anthropic-ai/claude-code
 
 # Initialize Claude Code in your project
-claude-code init
+claude init
 ```
 
 ### 1. Rails MCP Server
+
 Provides Rails-specific functionality and access to Rails, Stimulus, Turbo, and Kamal guides.
 
 **Installation:**
+
 ```bash
 # Already included in Gemfile under development group
 bundle install
 
 # Add to Claude Code MCP configuration
-claude-code mcp add rails-mcp-server rails-mcp-server
+claude mcp add rails-mcp-server rails-mcp-server
 ```
 
 **Usage:**
+
 ```bash
 # Run in stdio mode (default)
 bundle exec rails-mcp-server
@@ -157,9 +176,11 @@ bundle exec rails-mcp-server --log-level debug
 ```
 
 ### 2. GitHub MCP Server
+
 Provides GitHub integration for repository management, issues, pull requests, and more.
 
 **Setup:**
+
 ```bash
 # Add GitHub MCP server to Claude Code
 claude mcp add github-mcp-server \
@@ -169,6 +190,7 @@ claude mcp add github-mcp-server \
 ```
 
 **Functionality:**
+
 - Repository management
 - Issue and PR creation/management
 - Code search across GitHub
@@ -178,18 +200,22 @@ claude mcp add github-mcp-server \
 **Note:** The GitHub MCP server requires GitHub API authentication. You'll need to provide a GitHub personal access token during configuration.
 
 ### 3. HT MCP Server
+
 Provides terminal session management and command execution capabilities.
 
 **Features:**
+
 - Create and manage terminal sessions
 - Execute commands with output capture
 - Take terminal snapshots
 - Session control and monitoring
 
 ### 4. Browser MCP Server
+
 Enables web browser automation and interaction capabilities.
 
 **Features:**
+
 - Navigate to URLs and control web pages
 - Take screenshots and page snapshots
 - Click elements and fill forms
@@ -197,26 +223,32 @@ Enables web browser automation and interaction capabilities.
 - Extract page content and data
 
 ### 5. Memory MCP Server
+
 Handles session memory management and context persistence.
 
 **Features:**
+
 - Maintain conversation context across sessions
 - Store and retrieve development notes
 - Persist important project information
 
 ### 6. File System MCP Server
+
 Provides enhanced file operations beyond standard file tools.
 
 **Features:**
+
 - Advanced file search and pattern matching
 - Bulk file operations
 - Directory tree operations
 - File metadata access
 
 ### 7. Web Fetch MCP Server
+
 Enables web content retrieval and processing.
 
 **Features:**
+
 - Fetch content from URLs
 - Process and analyze web pages
 - Extract specific information from websites
