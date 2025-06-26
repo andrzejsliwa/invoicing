@@ -1,0 +1,11 @@
+// .vscode/keybindings.json
+[
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\n"
+    },
+    "when": "terminalFocus"
+  }
+]

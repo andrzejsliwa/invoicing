@@ -57,8 +57,8 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  # MCP server for Rails development
-  gem "rails-mcp-server"
+  gem "rails-mcp-server", require: false  
+  gem "erb-formatter", require: false
 end
 
 group :test do

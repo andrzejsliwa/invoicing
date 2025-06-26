@@ -1,0 +1,27 @@
+// .vscode/extensions.json
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "heybourn.headwind",
+    "eamodio.gitlens",
+    "Shopify.ruby-lsp",
+    "elia.erb-formatter",
+    "marcoroth.stimulus-lsp",
+    "ckolkman.vscode-postgres",
+    "redhat.vscode-yaml",
+    "davidanson.vscode-markdownlint",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "kaiwood.endwise",
+    "oderwat.indent-rainbow",
+
+    "codeandstuff.package-json-upgrade",
+    "connorshea.vscode-ruby-test-adapter",
+    "jock.svg",
+    "wayou.vscode-todo-highlight",
+    "Gruntfuggly.todo-tree"
+  ]
+}

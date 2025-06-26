@@ -22,6 +22,7 @@ A modern Rails 8.0.2 invoicing application built with PostgreSQL, Hotwire, Tailw
 ## 🛠️ Quick Start
 
 ### Initial Setup
+
 ```bash
 # Clone the repository
 git clone https://github.com/andrzejsliwa/invoicing.git
@@ -37,6 +38,7 @@ bin/dev
 The application will be available at `http://localhost:3000`
 
 ### Manual Setup
+
 If you prefer step-by-step setup:
 
 ```bash
@@ -58,6 +60,7 @@ bin/rails tailwindcss:watch
 ## 🏗️ Architecture
 
 ### Technology Stack
+
 - **Backend**: Ruby on Rails 8.0.2 with MVC architecture
 - **Frontend**: Hotwire (Turbo + Stimulus) with Tailwind CSS
 - **Database**: PostgreSQL with multi-database configuration
@@ -68,7 +71,9 @@ bin/rails tailwindcss:watch
 - **Deployment**: Kamal with Docker containerization
 
 ### Database Architecture
+
 The application uses multiple PostgreSQL databases:
+
 - **Primary**: Main application data (invoices, customers, etc.)
 - **Cache**: Solid Cache storage
 - **Queue**: Background job processing
@@ -77,6 +82,7 @@ The application uses multiple PostgreSQL databases:
 ## 🧪 Development
 
 ### Running Tests
+
 ```bash
 # Run all tests
 bin/rails test
@@ -93,6 +99,7 @@ bin/rails test test/models/invoice_test.rb:25
 ```
 
 ### Code Quality
+
 ```bash
 # Run linter
 bin/rubocop
@@ -105,6 +112,7 @@ bin/brakeman
 ```
 
 ### Database Operations
+
 ```bash
 # Create migration
 bin/rails generate migration CreateInvoices
@@ -127,6 +135,7 @@ bin/rails console
 This project includes comprehensive MCP (Model Context Protocol) integration for enhanced development with Claude Code:
 
 ### Available MCP Servers
+
 1. **Rails MCP Server** - Access to Rails, Stimulus, Turbo, and Kamal guides
 2. **GitHub MCP Server** - Repository management and GitHub integration
 3. **HT MCP Server** - Terminal session management
@@ -136,15 +145,16 @@ This project includes comprehensive MCP (Model Context Protocol) integration for
 7. **Web Fetch MCP Server** - Web content retrieval
 
 ### Setup MCP Integration
+
 ```bash
 # Install Claude Code CLI
 npm install -g @anthropic-ai/claude-code
 
 # Initialize in project
-claude-code init
+claude init
 
 # Add Rails MCP server
-claude-code mcp add rails-mcp-server
+claude mcp add rails-mcp-server
 ```
 
 See `CLAUDE.md` for detailed MCP setup instructions.
@@ -152,6 +162,7 @@ See `CLAUDE.md` for detailed MCP setup instructions.
 ## 🚀 Deployment
 
 ### Production Deployment with Kamal
+
 ```bash
 # Initial setup (first deployment)
 bin/kamal setup
@@ -167,6 +178,7 @@ bin/kamal app status
 ```
 
 ### Docker Development
+
 ```bash
 # Build Docker image
 docker build -t invoicing .
@@ -178,6 +190,7 @@ docker-compose up
 ## 🔧 Configuration
 
 ### Environment Variables
+
 Create `.env` files for different environments:
 
 ```bash
@@ -191,6 +204,7 @@ RAILS_MASTER_KEY=your_production_master_key
 ```
 
 ### Credentials Management
+
 ```bash
 # Edit credentials
 bin/rails credentials:edit
@@ -230,6 +244,7 @@ The application is designed to support comprehensive invoicing workflows:
 7. Open a Pull Request
 
 ### Development Guidelines
+
 - Follow Rails conventions and best practices
 - Write tests for new functionality
 - Ensure all CI checks pass
@@ -253,3 +268,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Ready to build amazing invoicing solutions!** 🚀
 
 For detailed development guidance and MCP setup, see [CLAUDE.md](CLAUDE.md).
+
